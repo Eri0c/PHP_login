@@ -10,7 +10,7 @@ $rotas_primitivas = require_once __DIR__ ."/../inc/rotas.php";
 $rota = $_GET['rota'] ?? 'home';// A variavel ira buscar pela 'rota' se não existir será sempre 'home'
 
 // Verifica se o usuario está logado
-if(!isset($_SESSION['usuario']) && $rota !=='login_submit') {
+if(!isset($_SESSION['usuario']) && $rota !=='login_submit' && $rota !== 'registrar' && $rota !== 'registrar_submit') {
     $rota = "login";
 }
 
@@ -41,6 +41,12 @@ switch($rota) {
     case   'home': 
         $script = 'home.php';   
         break; 
+    case    'registrar':
+        $script = 'registrar.php';
+        break;  
+    case    'registrar_submit':
+        $script = 'registrar_submit.php';
+        break;        
             
 }
 

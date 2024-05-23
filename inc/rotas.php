@@ -4,6 +4,8 @@ return [
     'home',
     'login',
     'login_submit',
+    'registrar',
+    'registrar_submit',
     'loggout',
 
     'page1',

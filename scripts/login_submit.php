@@ -6,7 +6,7 @@ if($_SERVER['REQUEST_METHOD'] !== 'POST'){//Se usuario tentar acessar login_subm
 }
 
 // Vai buscar os dados do POST
-$usuario = $_POST['text-usuario'] ?? null;
+$usuario = $_POST['text_usuario'] ?? null;
 $senha = $_POST['text_senha'] ?? null;
 
 //Verifica se os dados estão preenchidos 

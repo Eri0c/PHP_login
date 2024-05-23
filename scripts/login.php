@@ -1,9 +1,12 @@
 <?php
+
 //Verifica se existe erro na sessão
 $erro = $_SESSION['error'] ?? null;
+unset($_SESSION['error']);
 
-
-unset($_SESSION['error'])
+//Verifica se existe sucesso na sessão
+$sucesso = $_SESSION['success'] ?? null;
+unset($_SESSION['success']);
 ?>
 
 <div class="container mt-5">
@@ -26,8 +29,21 @@ unset($_SESSION['error'])
                <div>
                   <input type="submit" value="Entrar" class="btn btn-secondary w-100">
                </div>
+               <div class="mt-3 text-center ">
+                  <!--redirecionando para a pagina de registro -->
+                  <p><a href="index.php?rota=registrar">Crie sua conta</a></p>
+
+               </div>
             </form>
 
+            <!--Verifica se existe erro e imprime mensagem do erro -->
+            <?php if(!empty($sucesso)): ?>
+               <div class="alert alert-success mt-3 p-2 text-center">
+                  <?= $sucesso ?>
+               </div>
+            <?php endif; ?>
+
+            <!--Verifica se existe erro e imprime mensagem do erro -->
             <?php if(!empty($erro)): ?>
                   <div class="alert alert-danger mt-3 p-2 text-center">
                      <?= $erro ?>
